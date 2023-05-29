@@ -1,0 +1,254 @@
+
+
+
+:root{
+    --primaryColor: white;
+    --naveColor1: rgb(28, 103, 133);
+    --naveColor2: rgb(153, 129, 41);
+    --naveColor3: rgb(28, 103, 133);
+    --naveColor4: rgb(153, 129, 41);
+    --naveColor5: rgb(28, 103, 133);
+}
+html{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: black;
+}
+
+.overlay{
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0 , 0.7);
+    transform: translateX(-100vw);
+}
+.overlay-slide-right{
+    transition: all 0.4s ease-in-out;
+    transform: translateX(0);
+}
+
+.overlay-slide-left{
+    transition: all 0.8s ease-in-out;
+    transform: translateX(-100vw);
+}
+
+nav ,nav ul{
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    list-style: none;
+}
+nav ul li{
+    height: 20%;
+    overflow: hidden;
+}
+
+nav li a:hover{
+    transform: scale(1.5);
+}
+nav li a::before{
+    content: "";
+    width: 25vw;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    opacity: 0;
+}
+nav li a:hover::before{
+    opacity: 1;
+}
+
+nav li:nth-of-type(1){
+    background-color: var(--naveColor1);
+}
+
+nav li:nth-of-type(2){
+    background-color: var(--naveColor2);
+}
+
+nav li:nth-of-type(3){
+    background-color: var(--naveColor3);
+}
+
+nav li:nth-of-type(4){
+    background-color: var(--naveColor4);
+}
+
+nav li:nth-of-type(5){
+    background-color: var(--naveColor5);
+}
+
+ .slide-in-1{
+    animation: slide-in 0.4s linear 0.2s both;
+ }
+ .slide-in-2{
+    animation: slide-in 0.4s linear 0.4s both;
+ }
+
+ .slide-in-3{
+    animation: slide-in 0.4s linear 0.6s both;
+ }
+
+ .slide-in-4{
+    animation: slide-in 0.4s linear 0.8s both;
+ }
+
+ .slide-in-5{
+    animation: slide-in 0.4s linear 1s both;
+ }
+
+ @keyframes slide-in{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+ }
+
+
+ .slide-out-1{
+    animation: slide-out 0.3s linear 0.5s both;
+ }
+ .slide-out-2{
+    animation: slide-out 0.3s linear 0.4s both;
+ }
+
+ .slide-out-3{
+    animation: slide-out 0.3s linear 0.3s both;
+ }
+
+ .slide-out-4{
+    animation: slide-out 0.3s linear 0.2s both;
+ }
+
+ .slide-out-5{
+    animation: slide-out 0.3s linear 0.1s both;
+ }
+
+ @keyframes slide-out{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+ }
+
+
+.menu-bars {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: 10;
+    display: inline;
+    cursor: pointer;
+  }
+  
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px 0;
+    transition: 0.4s;
+  }
+
+.change .bar1{
+    transform: rotate(-45deg) translate(-7px, 8px);
+}
+.change .bar2{
+    opacity: 0;
+}
+.change .bar3{
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: var(--primaryColor);
+}
+section#home{
+    background-image: url(https://plus.unsplash.com/premium_photo-1684338795288-097525d127f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80);
+    background-size: cover;
+    background-position: center;
+}
+section#home a{
+    position: absolute;
+    z-index: 2;
+    top: 1.5rem;
+    left: 1.5rem;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: var(--primaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+section#about{
+    background-color: var(--naveColor2);
+}
+section#skills{
+    background-color: var(--naveColor3);
+}
+section#projects{
+    background-color: var(--naveColor4);
+}
+section#contact{
+    background-color: var(--naveColor5);
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+    section#home a {
+      top: 1rem;
+      left: 1rem;
+    }
+  
+    .menu-bars {
+      top: 0.5rem;
+      right: 1rem;
+    }
+  }
+
+
+
+
+
+
+
+a{
+   display: flex;
+   justify-content: center; 
+   padding-top: 20px;
+   font-size: 50px;
+   color: rgb(28, 227, 187);
+   border: none;
+   text-shadow: 2px 2px 5px red;
+}
+
+
+
+
+
